@@ -28,12 +28,17 @@ Strategy.prototype.userProfile = function(accessToken, done) {
         catch(e) { done(e); }
 
         var dmProfile = { provider: 'dailymotion' };
-        dmProfile.displayName = dmProfile.screenname;
+        dmProfile.id = json.id;
+
+        if (!!json.email)
+            dmProfile.emails = [{ value: json.email }];
+
+        dmProfile.displayName = json.screenname;
 
         var nameComponents = dmProfile.displayName.split(' ');
         var pName = { familyName: '', givenName: nameComponents[0] };
 
-        if (nameComponents.length > 0)
+        if (nameComponents.length > 1)
             pName.familyName = nameComponents[nameComponents.length - 1];
 
         dmProfile.name = pName;
@@ -43,31 +48,6 @@ Strategy.prototype.userProfile = function(accessToken, done) {
 
         done(null, dmProfile);
     });
-};
-
-Strategy.prototype._convertProfileFields = function(profileFields) {
-    var map = {
-        id: 'id',
-        displayName: 'screenname',
-        username: 'username'
-    };
-
-    var fields = [];
-
-    return _.map(profileFields, function(f) {
-        if (typeof map[f] !== 'undefined') return map[f];
-    }).join(',');
-};
-
-Strategy.prototype.authorizationParams = function(options) {
-    var params = {};
-    if (!!options.accessType)
-        params.access_type = options.accessType;
-
-    if (!!options.approvalPrompt)
-        params.approval_prompt = options.approvalPrompt;
-
-    return params;
 };
 
 module.exports.Strategy = Strategy;
