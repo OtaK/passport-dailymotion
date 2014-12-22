@@ -7,7 +7,7 @@ var OAuth2Strategy      = require('passport-oauth').OAuth2Strategy,
 var Strategy = function(options, verify) {
     options = options || {};
     options.authorizationURL = options.authorizationURL || 'https://www.dailymotion.com/oauth/authorize';
-    options.tokenURL = options.tokenURL || 'https://www.dailymotion.com/oauth/token';
+    options.tokenURL = options.tokenURL || 'https://api.dailymotion.com/oauth/token';
     options.scopeSeparator = options.scopeSeparator || ',';
 
     OAuth2Strategy.call(this, options, verify);

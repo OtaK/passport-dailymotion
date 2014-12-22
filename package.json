@@ -1,6 +1,6 @@
 {
     "name": "passport-dailymotion",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Dailymotion strategy for Passport.js",
     "main": "index.js",
     "scripts": {
