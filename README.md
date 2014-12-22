@@ -18,7 +18,7 @@ unobtrusively integrated into any application or framework that supports
 The Dailymotion OAuth 2.0 authentication strategy authenticates users using a Dailymotion
 account and OAuth 2.0 tokens.  The strategy requires a `verify` callback, which
 accepts these credentials and calls `done` providing a user, as well as
-`options` specifying a client ID, client secret, and callback URL.
+`options` specifying a App ID, App secret, and callback URL.
 
 ```Javascript
 var DailymotionStrategy = require('passport-dailymotion').Strategy;
