@@ -1,4 +1,4 @@
-var util = require('util');
+var util = require('util'),
     _    = require('lodash');
 
 var OAuth2Strategy      = require('passport-oauth').OAuth2Strategy,
