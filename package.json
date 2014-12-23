@@ -1,6 +1,6 @@
 {
     "name": "passport-dailymotion",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Dailymotion strategy for Passport.js",
     "main": "index.js",
     "scripts": {
@@ -17,7 +17,6 @@
         "oauth2"
     ],
     "dependencies": {
-        "lodash": "2.4.x",
         "passport-oauth": "1.0.x"
     },
     "author": {

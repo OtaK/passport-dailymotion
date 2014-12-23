@@ -1,5 +1,4 @@
-var util = require('util'),
-    _    = require('lodash');
+var util = require('util');
 
 var OAuth2Strategy      = require('passport-oauth').OAuth2Strategy,
     InternalOAuthError  = require('passport-oauth').InternalOAuthError;
